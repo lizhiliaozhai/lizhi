@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电商平台</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h1>电商平台</h1>
+            </div>
+            <div class="nav-links">
+                <a href="#home">首页</a>
+                <a href="#products">商品</a>
+                <a href="#about">关于我们</a>
+                <a href="#contact">联系我们</a>
+            </div>
+            <div class="nav-cart">
+                <button class="cart-btn" onclick="toggleCart()">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 购物车侧边栏 -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>购物车</h3>
+            <button class="close-cart" onclick="toggleCart()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <p class="empty-cart">购物车为空</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>总计: </span>
+                <span id="cart-total">¥0.00</span>
+            </div>
+            <button class="checkout-btn">结算</button>
+        </div>
+    </div>
+    <div id="cart-overlay" class="overlay" onclick="toggleCart()"></div>
+
+    <!-- 首页轮播 -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>欢迎来到电商平台</h2>
+            <p>发现优质商品，享受便捷购物体验</p>
+            <button class="shop-now-btn" onclick="scrollToProducts()">立即购物</button>
+        </div>
+    </section>
+
+    <!-- 商品展示 -->
+    <section id="products" class="products-section">
+        <div class="section-header">
+            <h2>热门商品</h2>
+            <p>精选优质商品，品质保证</p>
+        </div>
+        <div class="products-grid" id="products-grid">
+            <!-- 商品卡片将通过JS动态生成 -->
+        </div>
+    </section>
+
+    <!-- 商品详情模态框 -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-body" id="modal-body">
+                <!-- 商品详情将通过JS动态生成 -->
+            </div>
+        </div>
+    </div>
+    <div id="modal-overlay" class="overlay" onclick="closeModal()"></div>
+
+    <!-- 关于我们 -->
+    <section id="about" class="about-section">
+        <div class="section-header">
+            <h2>关于我们</h2>
+        </div>
+        <div class="about-content">
+            <p>我们致力于为用户提供优质的购物体验，精选全球好货，让每一次购物都充满惊喜。</p>
+        </div>
+    </section>
+
+    <!-- 联系我们 -->
+    <section id="contact" class="contact-section">
+        <div class="section-header">
+            <h2>联系我们</h2>
+        </div>
+        <div class="contact-content">
+            <p>客服热线: 400-888-8888</p>
+            <p>邮箱: service@ecommerce.com</p>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <p>&copy; 2024 电商平台. 保留所有权利.</p>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
